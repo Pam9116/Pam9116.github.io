@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Ana-Maria Petre | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Ana-Maria Petre — Electronics, Telecommunications and Information Technology student building software, automation and engineering solutions."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="aurora">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-core"></div>
+    <p>Booting portfolio...</p>
+  </div>
+
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="progress-line" id="progressLine"></div>
+
+  <canvas id="particlesCanvas" class="particles-canvas" aria-hidden="true"></canvas>
+
+  <aside class="social-rail" aria-label="Social links">
+    <a
+      href="https://github.com/YOUR_GITHUB"
+      target="_blank"
+      rel="noopener"
+      aria-label="GitHub"
+      title="GitHub"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2C6.477 2 2 6.586 2 12.244c0 4.526 2.865 8.366 6.839 9.72.5.096.682-.223.682-.496 0-.245-.009-.894-.014-1.755-2.782.617-3.369-1.386-3.369-1.386-.455-1.176-1.11-1.489-1.11-1.489-.908-.636.069-.623.069-.623 1.003.072 1.53 1.052 1.53 1.052.892 1.563 2.341 1.112 2.91.85.091-.664.349-1.112.635-1.368-2.221-.259-4.555-1.138-4.555-5.063 0-1.118.39-2.032 1.03-2.748-.103-.26-.446-1.304.098-2.719 0 0 .84-.276 2.75 1.05A9.303 9.303 0 0 1 12 6.84a9.27 9.27 0 0 1 2.504.348c1.909-1.326 2.748-1.05 2.748-1.05.546 1.415.202 2.459.1 2.719.64.716 1.028 1.63 1.028 2.748 0 3.935-2.337 4.801-4.565 5.055.359.318.678.944.678 1.903 0 1.374-.012 2.48-.012 2.818 0 .275.18.596.688.495C19.138 20.606 22 16.768 22 12.244 22 6.586 17.523 2 12 2Z"/>
+      </svg>
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/YOUR_LINKEDIN"
+      target="_blank"
+      rel="noopener"
+      aria-label="LinkedIn"
+      title="LinkedIn"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.9 3.3 5.01c0 1.1.86 2.01 1.93 2.01h.02c1.1 0 1.96-.9 1.96-2.01C7.2 3.9 6.35 3 5.27 3h-.02ZM20.7 12.67c0-3.47-1.84-5.09-4.29-5.09-1.98 0-2.86 1.11-3.36 1.89V8.5H9.67c.04.64 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.67.12-.91.27-.67.89-1.37 1.93-1.37 1.36 0 1.9 1.06 1.9 2.61V20h3.38v-7.33Z"/>
+      </svg>
+    </a>
+
+    <a
+      href="https://instagram.com/YOUR_INSTAGRAM"
+      target="_blank"
+      rel="noopener"
+      aria-label="Instagram"
+      title="Instagram"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.25 1.65a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
+      </svg>
+    </a>
+  </aside>
+
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a href="#top" class="logo" aria-label="Go to top">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">Ana<span>.</span></span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Timeline</a>
+        <a href="#skills">Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="mailto:pam.anamariapetre@gmail.com" class="nav-cta magnetic">Contact me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="hero">
+      <div class="hero-copy">
+        <div class="hero-badge reveal">
+          <span class="status-dot"></span>
+          Open to internships, junior roles & collaborations
+        </div>
+
+        <p class="hero-intro reveal">Hello, I’m</p>
+
+        <h1 class="hero-title reveal">
+          Ana-Maria <span>Petre</span>
+        </h1>
+
+        <p class="hero-subtitle reveal">
+          Electronics, Telecommunications and IT student focused on
+          <span class="typed-wrap">
+            <span id="typedText"></span>
+            <span class="typed-cursor">|</span>
+          </span>
+        </p>
+
+        <p class="hero-description reveal">
+          I build practical digital solutions that combine engineering thinking,
+          software, automation and interfaces that feel clean, modern and alive.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary magnetic">See projects</a>
+          <a href="CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost magnetic">Resume</a>
+          <a
+            href="https://github.com/YOUR_GITHUB"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary magnetic"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <div class="hero-panels">
+          <div class="mini-panel glass reveal-card">
+            <span class="mini-label">Focus</span>
+            <strong>Software + Automation</strong>
+          </div>
+          <div class="mini-panel glass reveal-card">
+            <span class="mini-label">Style</span>
+            <strong>Creative + Technical</strong>
+          </div>
+          <div class="mini-panel glass reveal-card">
+            <span class="mini-label">Goal</span>
+            <strong>Build useful systems</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="system-card glass">
+          <div class="system-top">
+            <div class="system-leds">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mono">ana.system</span>
+          </div>
+
+          <div class="system-center">
+            <div class="radar-ring ring-1"></div>
+            <div class="radar-ring ring-2"></div>
+            <div class="radar-ring ring-3"></div>
+
+            <div class="core-node"></div>
+
+            <div class="floating-card floating-card-a">
+              <span class="mono small">$ current_mode</span>
+              <strong>engineering beautiful things</strong>
+            </div>
+
+            <div class="floating-card floating-card-b">
+              <span class="mono small">$ active_stack</span>
+              <strong>web · automation · systems</strong>
+            </div>
+
+            <div class="skill-chip chip-a">Linux</div>
+            <div class="skill-chip chip-b">Automation</div>
+            <div class="skill-chip chip-c">UI / UX</div>
+            <div class="skill-chip chip-d">Engineering</div>
+          </div>
+
+          <div class="command-center">
+            <button class="command-btn magnetic" data-theme-set="aurora">Aurora</button>
+            <button class="command-btn magnetic" data-theme-set="ocean">Ocean</button>
+            <button class="command-btn magnetic" data-theme-set="gold">Gold</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="about">
+      <div class="section-heading reveal">
+        <span class="section-kicker">01</span>
+        <h2>About me</h2>
+        <p>
+          I enjoy projects where engineering logic, clean implementation and expressive interface design
+          work together naturally.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo glass tilt reveal-card">
+          <img src="img1.jpeg" alt="Portrait of Ana-Maria Petre" />
+        </div>
+
+        <div class="about-main glass reveal-card">
+          <p>
+            I am currently studying Electronics, Telecommunications and Information Technology,
+            building a strong technical base across software, systems, engineering and practical problem solving.
+          </p>
+          <p>
+            I like working on projects where I can combine structure with creativity — from web applications
+            and automation workflows to technical implementations with real use.
+          </p>
+          <p>
+            I learn quickly, I adapt fast, and I care about building technology that feels both smart and usable.
+          </p>
+
+          <div class="tag-row">
+            <span>Problem solving</span>
+            <span>Systems thinking</span>
+            <span>Automation mindset</span>
+            <span>Fast learner</span>
+            <span>Team player</span>
+          </div>
+        </div>
+
+        <div class="about-side glass reveal-card">
+          <span class="side-title">What I enjoy building</span>
+          <ul>
+            <li>Practical web experiences</li>
+            <li>Automation flows</li>
+            <li>Interactive interfaces</li>
+            <li>Engineering projects with purpose</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="experience">
+      <div class="section-heading reveal">
+        <span class="section-kicker">02</span>
+        <h2>Timeline</h2>
+        <p>
+          A professional path shaped by adaptability, structured work and technical growth.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item glass reveal-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">May 2026 — Present</div>
+          <h3>Cloud Solution Architect @ <strong>Microsoft</strong></h3>
+          <p>Add the final role details here when you want the portfolio version to go live.</p>
+          <div class="tag-row">
+            <span>Cloud</span>
+            <span>Architecture</span>
+            <span>Systems</span>
+          </div>
+        </article>
+
+        <article class="timeline-item glass reveal-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">July 2025 — September 2025</div>
+          <h3>Software Developer Intern @ <strong>Todos & Company</strong></h3>
+          <p>
+            Worked on practical implementation, web development and automation of repetitive processes
+            in a collaborative environment.
+          </p>
+          <ul>
+            <li>Implemented custom functionalities using WordPress and PHP.</li>
+            <li>Improved efficiency through automation.</li>
+            <li>Worked in a practical, delivery-focused workflow.</li>
+          </ul>
+          <div class="tag-row">
+            <span>PHP</span>
+            <span>WordPress</span>
+            <span>Automation</span>
+            <span>Web</span>
+          </div>
+        </article>
+
+        <article class="timeline-item glass reveal-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">July 2022 — September 2022</div>
+          <h3>Operator @ <strong>Conectys</strong></h3>
+          <p>
+            Developed communication, process discipline and teamwork skills in a structured professional environment.
+          </p>
+          <div class="tag-row">
+            <span>Workflow</span>
+            <span>Communication</span>
+            <span>Adaptability</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="skills">
+      <div class="section-heading reveal">
+        <span class="section-kicker">03</span>
+        <h2>Stack</h2>
+        <p>
+          A mix of engineering fundamentals, software tools and practical implementation skills.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skills-cloud glass reveal-card">
+          <button class="skill-pill magnetic">C / C#</button>
+          <button class="skill-pill magnetic">C++</button>
+          <button class="skill-pill magnetic">Python</button>
+          <button class="skill-pill magnetic">PHP</button>
+          <button class="skill-pill magnetic">Linux</button>
+          <button class="skill-pill magnetic">OOP</button>
+          <button class="skill-pill magnetic">SQL / Databases</button>
+          <button class="skill-pill magnetic">Automation</button>
+          <button class="skill-pill magnetic">HTML / CSS / JS</button>
+          <button class="skill-pill magnetic">MATLAB</button>
+          <button class="skill-pill magnetic">Arduino</button>
+          <button class="skill-pill magnetic">Problem Solving</button>
+        </div>
+
+        <div class="terminal glass reveal-card">
+          <div class="terminal-top">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="prompt">ana@portfolio:~$</span> current_focus</p>
+            <p class="output">software, systems, automation, interfaces</p>
+
+            <p><span class="prompt">ana@portfolio:~$</span> mindset</p>
+            <p class="output">structured · practical · curious · creative</p>
+
+            <p><span class="prompt">ana@portfolio:~$</span> next_goal</p>
+            <p class="output">build useful products with real impact</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="projects">
+      <div class="section-heading reveal">
+        <span class="section-kicker">04</span>
+        <h2>Projects</h2>
+        <p>
+          A combination of academic and practical work that reflects how I think and build.
+        </p>
+      </div>
+
+      <div class="projects-toolbar reveal">
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="software">Software</button>
+          <button class="filter-btn" data-filter="automation">Automation</button>
+          <button class="filter-btn" data-filter="engineering">Engineering</button>
+        </div>
+
+        <a
+          href="https://github.com/YOUR_GITHUB"
+          target="_blank"
+          rel="noopener"
+          class="github-box magnetic"
+        >
+          <span class="mono">/github</span>
+          <strong>See more repositories</strong>
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card glass tilt reveal-card" data-category="engineering">
+          <span class="project-badge">MATLAB</span>
+          <h3>CodeMorse</h3>
+          <p>
+            Morse code generator and audio decoder focused on signal interpretation and interface design.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">Code</a>
+            <a href="#">Details</a>
+          </div>
+        </article>
+
+        <article class="project-card glass tilt reveal-card" data-category="engineering">
+          <span class="project-badge">Arduino</span>
+          <h3>Arduino Watch</h3>
+          <p>
+            Digital clock with real-time display, temperature sensor and stopwatch functionality.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">Code</a>
+            <a href="#">Details</a>
+          </div>
+        </article>
+
+        <article class="project-card glass tilt reveal-card" data-category="software engineering">
+          <span class="project-badge">C/C++</span>
+          <h3>Number Sorting</h3>
+          <p>
+            Sorting-focused implementation for processing an unknown-length sequence of unsigned integers.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">Code</a>
+            <a href="#">Details</a>
+          </div>
+        </article>
+
+        <article class="project-card glass tilt reveal-card" data-category="software">
+          <span class="project-badge">Database</span>
+          <h3>Transport Company Database</h3>
+          <p>
+            Structured database system designed to centralize and manage operational information.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">Code</a>
+            <a href="#">Details</a>
+          </div>
+        </article>
+
+        <article class="project-card glass tilt reveal-card" data-category="engineering">
+          <span class="project-badge">Electronics</span>
+          <h3>Rectangular Signal Oscillator</h3>
+          <p>
+            Technical design of a rectangular signal generator focused on circuit behavior and implementation.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">Code</a>
+            <a href="#">Details</a>
+          </div>
+        </article>
+
+        <article class="project-card glass tilt reveal-card featured-project" data-category="software automation">
+          <span class="project-badge">Full Stack</span>
+          <h3>Dog Shelter Platform</h3>
+          <p>
+            Full-stack web platform with authentication, shopping cart, adoption forms and MySQL integration.
+          </p>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">Code</a>
+            <a href="#">Details</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="contact">
+      <div class="contact-grid glass reveal">
+        <div class="contact-copy">
+          <span class="section-kicker">05</span>
+          <h2>Let’s work together</h2>
+          <p>
+            I’m open to internships, junior roles and technical collaborations where I can keep learning,
+            contribute with real work and build meaningful things with a strong team.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:pam.anamariapetre@gmail.com" class="btn btn-primary magnetic">Email me</a>
+            <a href="CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost magnetic">Download CV</a>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-icons-wrap">
+            <a
+              href="https://github.com/YOUR_GITHUB"
+              target="_blank"
+              rel="noopener"
+              class="contact-icon magnetic"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.586 2 12.244c0 4.526 2.865 8.366 6.839 9.72.5.096.682-.223.682-.496 0-.245-.009-.894-.014-1.755-2.782.617-3.369-1.386-3.369-1.386-.455-1.176-1.11-1.489-1.11-1.489-.908-.636.069-.623.069-.623 1.003.072 1.53 1.052 1.53 1.052.892 1.563 2.341 1.112 2.91.85.091-.664.349-1.112.635-1.368-2.221-.259-4.555-1.138-4.555-5.063 0-1.118.39-2.032 1.03-2.748-.103-.26-.446-1.304.098-2.719 0 0 .84-.276 2.75 1.05A9.303 9.303 0 0 1 12 6.84a9.27 9.27 0 0 1 2.504.348c1.909-1.326 2.748-1.05 2.748-1.05.546 1.415.202 2.459.1 2.719.64.716 1.028 1.63 1.028 2.748 0 3.935-2.337 4.801-4.565 5.055.359.318.678.944.678 1.903 0 1.374-.012 2.48-.012 2.818 0 .275.18.596.688.495C19.138 20.606 22 16.768 22 12.244 22 6.586 17.523 2 12 2Z"/>
+              </svg>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/YOUR_LINKEDIN"
+              target="_blank"
+              rel="noopener"
+              class="contact-icon magnetic"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.9 3.3 5.01c0 1.1.86 2.01 1.93 2.01h.02c1.1 0 1.96-.9 1.96-2.01C7.2 3.9 6.35 3 5.27 3h-.02ZM20.7 12.67c0-3.47-1.84-5.09-4.29-5.09-1.98 0-2.86 1.11-3.36 1.89V8.5H9.67c.04.64 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.67.12-.91.27-.67.89-1.37 1.93-1.37 1.36 0 1.9 1.06 1.9 2.61V20h3.38v-7.33Z"/>
+              </svg>
+            </a>
+
+            <a
+              href="https://instagram.com/YOUR_INSTAGRAM"
+              target="_blank"
+              rel="noopener"
+              class="contact-icon magnetic"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.25 1.65a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ana-Maria Petre. Designed to feel human, built to feel alive.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
