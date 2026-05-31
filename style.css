@@ -281,6 +281,15 @@ ul {
   pointer-events: none;
 }
 
+.typed-cursor {
+  animation: blink 0.9s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .reveal,
 .reveal-card {
   opacity: 0;
@@ -741,7 +750,7 @@ ul {
 /* ABOUT */
 .about-grid {
   display: grid;
-  grid-template-columns: 320px 1fr 280px;
+  grid-template-columns: 320px 1fr;
   gap: 24px;
   align-items: stretch;
 }
@@ -893,7 +902,9 @@ ul {
 
 .skill-pill:hover {
   transform: translateY(-3px) scale(1.02);
-  border-color: rgba(255,255,255,0.22);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: white;
 }
 
 .terminal {
@@ -961,11 +972,17 @@ ul {
   transition: 0.25s ease;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
+.filter-btn:hover {
   color: white;
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.18);
+}
+
+.filter-btn.active {
+  color: white;
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: 0 0 14px var(--accent-soft);
 }
 
 .github-box {
@@ -998,6 +1015,10 @@ ul {
 
 .project-card:hover {
   transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 0 32px var(--accent-soft),
+    var(--shadow);
 }
 
 .project-card h3 {
@@ -1031,9 +1052,7 @@ ul {
 }
 
 .featured-project {
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.08),
-    var(--shadow);
+  box-shadow: var(--shadow);
 }
 
 .project-card.hide {
